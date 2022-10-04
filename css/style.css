@@ -54,11 +54,11 @@ header {
     margin: 3%;
     border-radius: 50px;
     font-family: 'Encode Sans Condensed', sans-serif;
-    -webkit-transition: all 1s linear;
-    -moz-transition: all 1s linear;
-    -o-transition: all 1s linear;
-    transition: all 1s linear;
-    top: -200%;
+    -webkit-transition: all 1.5s linear;
+    -moz-transition: all 1.5s linear;
+    -o-transition: all 1.5s linear;
+    transition: all 1.5s linear;
+    top: -100%;
     width: 86%;
     height: 65vh;
     z-index: 10;
@@ -69,17 +69,6 @@ header {
     width: 100%;
     height: 100%;
     padding: 1% 4%;
-    border-radius: 25px;
-    border: 2px solid;
-}
-.sobrefondoPopper {
-    width: 100%;
-    height: 100%;
-    background: white;
-    padding: 1% 4%;
-    position: absolute;
-    top: 20px;
-    left: 20px;
     border-radius: 25px;
     border: 2px solid;
 }
@@ -445,6 +434,7 @@ div#proyectos {
     position: absolute;
     top: 30px;
     right: 30px;
+    cursor: pointer;
 } 
 
 .cerrar img {
@@ -749,4 +739,34 @@ a.category-item-link {
 #menuparticles {
     z-index: -100;
     position: absolute;
+}
+.cerrarPopperIcon {
+    cursor: pointer;
+}
+.like {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 24px;
+    color: white;
+}
+.yellow-body .like {
+    background-color: black;
+}
+.blue-body .like {
+    background-color: black;
+}
+.red-body .like {
+background-color: black;
+}
+.heart {
+    cursor: pointer;
+}
+.yellow-body .like .heart {
+    color:#FFB800
+}
+.red-body .like .heart {
+    color:#C01001
+}
+.blue-body .like .heart {
+    color:#072EB9
 }
