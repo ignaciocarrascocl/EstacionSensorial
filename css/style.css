@@ -60,7 +60,7 @@ header {
     transition: all 1.5s linear;
     top: -100%;
     width: 86%;
-    height: 65vh;
+    height: 75vh;
     z-index: 10;
 }
 
@@ -74,7 +74,7 @@ header {
 }
 
 .popper.show {
-    top: 125px;
+    top: 7vh;
 }
 #splide {
     position: relative;
@@ -108,7 +108,7 @@ header {
 .pop-content {
     display: flex;
     font-size: 16px;
-    height: 75%;
+    height: 60vh;
 }
 .pop-left {
     flex: 1;
