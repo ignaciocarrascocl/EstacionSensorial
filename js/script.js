@@ -6,7 +6,7 @@ window.onload = function () {
     if (window.localStorage.getItem("localNumber")) {
         noteNumber = window.localStorage.getItem("localNumber", 1);
     } else {
-        
+
     }
 
     const noteA = new Howl({
@@ -33,35 +33,45 @@ window.onload = function () {
     const kick = new Howl({
         src: ['./audio/808-bass-boom-hard-trap-loop-8-11510.mp3']
     })
+    const backSound = new Howl({
+        src: ['./audio/drop_002.ogg']
+    })
+    const welcome = new Howl({
+        src: ['audio/orch-006-cymbal-rollwav-14781.mp3']
+    })
 
     const kickSound = () => {
-        kick.play();
+        kick.play()
+    }
+
+    const Backer = () => {
+        backSound.play();
     }
 
     const fxSound = () => {
-        console.log(noteNumber)
-        if(noteNumber == 1){
+
+        if (noteNumber == 1) {
             noteA.play()
         }
-        if(noteNumber == 2){
+        if (noteNumber == 2) {
             noteB.play()
         }
-        if(noteNumber == 3){
+        if (noteNumber == 3) {
             noteC.play()
         }
-        if(noteNumber == 4){
+        if (noteNumber == 4) {
             noteD.play()
         }
-        if(noteNumber == 5){
+        if (noteNumber == 5) {
             noteE.play()
         }
-        if(noteNumber == 6){
+        if (noteNumber == 6) {
             noteF.play()
         }
-        if(noteNumber == 7){
+        if (noteNumber == 7) {
             noteG.play()
         }
-        if (noteNumber < 7 ) {
+        if (noteNumber < 7) {
             noteNumber++;
             window.localStorage.setItem("localNumber", noteNumber);
         } else {
@@ -75,7 +85,6 @@ window.onload = function () {
     }
 
     function clickHandler(event) {
-        fxSound();
         event.preventDefault();
         let travelTo = this.getAttribute("href");
 
@@ -137,27 +146,21 @@ window.onload = function () {
         document.getElementById("proyectos").className = "show"
         showOverlay()
     }
-
-
-
     const cerrarProyectos = function () {
         document.getElementById("proyectos").className = "hide";
         hideOverlay()
     }
 
-
-
-
     /* Nuevos botones */
-    if(botonCerrarProyectos){
+    if (botonCerrarProyectos) {
         botonCerrarProyectos.addEventListener('click', cerrarProyectos)
     }
-    if(botonProyectos){
+    if (botonProyectos) {
         botonProyectos.addEventListener('click', showProjects)
     }
-    
-    
-    
+
+
+
     /* Cambiar tipo de animación posterior a la entrada de los círculos del menú principal */
 
     const addAnimation = function () {
@@ -188,32 +191,50 @@ window.onload = function () {
 
     const proyecto = document.getElementById('item_proyectos');
 
-    if(proyecto) {
-        proyecto.addEventListener("click", function(){
+    if (proyecto) {
+        proyecto.addEventListener("click", function () {
             kickSound();
         })
     }
 
+
+    const BackElement = document.getElementsByClassName("backSound");
     const hoverElements = document.getElementsByClassName("lab-item");
     const hoverElements2 = document.getElementsByClassName("category-item");
     const hoverElements3 = document.getElementsByClassName("ball-item");
 
-    for (let i = 0; i < hoverElements.length; i++) {
-        hoverElements[i].addEventListener('mouseenter', function () {
-            fxSound()
-        });
+    if (hoverElements) {
+        for (let i = 0; i < hoverElements.length; i++) {
+            hoverElements[i].addEventListener('mouseenter', function () {
+                fxSound()
+            });
+        }
     }
-
-    for (let i = 0; i < hoverElements2.length; i++) {
-        hoverElements2[i].addEventListener('mouseenter', function () {
-            fxSound()
-        });
+    if (hoverElements2) {
+        for (let i = 0; i < hoverElements2.length; i++) {
+            hoverElements2[i].addEventListener('mouseenter', function () {
+                fxSound()
+            });
+        }
     }
+    if (hoverElements3) {
 
-    for (let i = 0; i < hoverElements3.length; i++) {
-        hoverElements3[i].addEventListener('mouseenter', function () {
-            fxSound()
-        });
+        for (let i = 0; i < hoverElements3.length; i++) {
+            hoverElements3[i].addEventListener('mouseenter', function () {
+
+                fxSound()
+            });
+        }
+    }
+    if (BackElement) {
+        for (let i = 0; i < BackElement.length; i++) {
+            BackElement[i].addEventListener('click', function () {
+                Backer()
+            });
+        }
+    }
+    if (document.getElementById('menuparticles')) {
+        welcome.play();
     }
 
 };
