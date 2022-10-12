@@ -187,7 +187,7 @@ a {
     line-height: 0;
     padding-top: 20px;
 }
-.lab-item:hover {
+.rounded-back:hover {
     scale: 1.1;
 }
 span.more {
@@ -503,6 +503,7 @@ div#item_proyectos {
     -o-transition: all 0.5s linear;
     transition: all 0.5s linear;
     width: 8%;
+    cursor: pointer;
 }
 
 .ball-item {
@@ -588,6 +589,7 @@ div#item_proyectos {
 .color-change{
     border-radius: 50%;
     position: absolute;
+    cursor: pointer;
 }
 .campo-item span {
     font-weight: bold;
